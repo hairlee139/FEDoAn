@@ -9,12 +9,12 @@ export const WrapperHeader = styled.h1`
 export const WrapperContentProfile = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
-    width: 600px;
+    // border: 1px solid #ccc;
+    width: 1000px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    gap: 30px;
+    gap: 20px;
 `
 
 export const WrapperLabel = styled.label`
@@ -22,7 +22,7 @@ export const WrapperLabel = styled.label`
     font-size: 12px;
     line-height: 30px;
     font-weight: 600;
-    width: 210px;
+    width: 220px;
     text-align: left;
 `
 

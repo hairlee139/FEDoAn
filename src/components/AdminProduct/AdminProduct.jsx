@@ -581,6 +581,8 @@ const AdminProduct = () => {
           </Form>
         </Loading>
       </ModalComponent>
+
+      
       <DrawerComponent title='Chi tiết sản phẩm' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
         <Loading isLoading={isLoadingUpdate || isLoadingUpdated}>
 

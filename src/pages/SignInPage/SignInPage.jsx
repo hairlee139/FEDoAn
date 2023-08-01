@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent'
 import InputForm from '../../components/InputForm/InputForm'
-import { WrapperContainerLeft, WrapperContainerRight, WrapperTextLight } from './style'
-import imageLogo from '../../assets/images/logo-login.png'
-import { Image } from 'antd'
+import { WrapperContainerLeft, WrapperTextLight } from './style'
 import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -20,7 +18,7 @@ const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const user  = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user)
 
   const navigate = useNavigate()
 
@@ -31,9 +29,9 @@ const SignInPage = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      if(location?.state) {
+      if (location?.state) {
         navigate(location?.state)
-      }else {
+      } else {
         navigate('/')
       }
       localStorage.setItem('access_token', JSON.stringify(data?.access_token))
@@ -51,7 +49,7 @@ const SignInPage = () => {
     const storage = localStorage.getItem('refresh_token')
     const refreshToken = JSON.parse(storage)
     const res = await UserService.getDetailsUser(id, token)
-    dispatch(updateUser({ ...res?.data, access_token: token,refreshToken }))
+    dispatch(updateUser({ ...res?.data, access_token: token, refreshToken }))
   }
 
 
@@ -79,7 +77,7 @@ const SignInPage = () => {
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0, 0, 0, 0.53)', height: '100vh' }}>
       <div style={{ width: '800px', height: '445px', borderRadius: '6px', background: '#fff', display: 'flex' }}>
         <WrapperContainerLeft>
-          <h1>Xin chào</h1>
+          <h1 style={{ textAlign: 'center' }}>HỆ THỐNG QUẢN LÝ NHÂN SỰ BỘ QUỐC PHÒNG</h1>
           <p>Đăng nhập vào tạo tài khoản</p>
           <InputForm style={{ marginBottom: '10px' }} placeholder="abc@gmail.com" value={email} onChange={handleOnchangeEmail} />
           <div style={{ position: 'relative' }}>
@@ -127,10 +125,10 @@ const SignInPage = () => {
           <p><WrapperTextLight>Quên mật khẩu?</WrapperTextLight></p>
           <p>Chưa có tài khoản? <WrapperTextLight onClick={handleNavigateSignUp}> Tạo tài khoản</WrapperTextLight></p>
         </WrapperContainerLeft>
-        <WrapperContainerRight>
+        {/* <WrapperContainerRight>
           <Image src={imageLogo} preview={false} alt="iamge-logo" height="203px" width="203px" />
           <h4>Mua sắm tại LTTD</h4>
-        </WrapperContainerRight>
+        </WrapperContainerRight> */}
       </div>
     </div >
   )

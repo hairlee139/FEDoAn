@@ -20,7 +20,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false)
   const [limit, setLimit] = useState(6)
   const [typeProducts, setTypeProducts] = useState([])
-  
+
   const fetchProductAll = async (context) => {
     const limit = context?.queryKey && context?.queryKey[1]
     const search = context?.queryKey && context?.queryKey[2]
@@ -32,7 +32,7 @@ const HomePage = () => {
 
   const fetchAllTypeProduct = async () => {
     const res = await ProductService.getAllTypeProduct()
-    if(res?.status === 'OK') {
+    if (res?.status === 'OK') {
       setTypeProducts(res?.data)
     }
   }
@@ -46,16 +46,10 @@ const HomePage = () => {
   return (
     <Loading isLoading={isLoading || loading}>
       <div style={{ width: '1270px', margin: '0 auto' }}>
-        {/* <WrapperTypeProduct>
-          {typeProducts.map((item) => {
-            return (
-              <TypeProduct name={item} key={item}/>
-            )
-          })}
-        </WrapperTypeProduct> */}
+
       </div>
       <div className='body' style={{ width: '100%', backgroundColor: '#efefef', }}>
-        <div id="container" style={{ height: '1000px', width: '1270px', margin: '0 auto' }}>
+        <div id="container" style={{ height: '620px', width: '1270px', margin: '0 auto' }}>
           <SliderComponent arrImages={[slider1, slider2, slider3]} />
           {/* <WrapperProducts>
             {products?.data?.map((product) => {
@@ -88,6 +82,9 @@ const HomePage = () => {
             />
           </div> */}
         </div>
+      </div>
+      <div className='footer' style={{ width: '100%', height: '30px', backgroundColor: '#f5f5f5', }}>
+        <h4 style={{ textAlign: 'right', padding: "5px" }}> Date: 2023</h4>
       </div>
     </Loading>
   )
