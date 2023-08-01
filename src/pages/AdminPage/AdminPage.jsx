@@ -50,6 +50,14 @@ import HoSoCanBo from '../QuanLyDonVi/HoSoCanBo';
 import QuanLyNhuCauBC from '../QuanLyDonVi/QuanLyNhuCauBC';
 import DieuChuyenCanBo from '../QuanLyDonVi/DieuChuyenCanBo';
 import DrawerComponent from '../../components/DrawerComponent/DrawerComponent';
+import SLCB from '../ChiHuyDieuHanh/TKBienChe';
+import TKBienChe from '../ChiHuyDieuHanh/TKBienChe';
+import TKCapBac from '../ChiHuyDieuHanh/TKCapBac';
+import TKCDKH from '../ChiHuyDieuHanh/TKCDKH';
+import TKDoTuoi from '../ChiHuyDieuHanh/TKDoTuoi';
+import TKNganh from '../ChiHuyDieuHanh/TKNganh';
+
+
 const AdminPage = () => {
   const user = useSelector((state) => state?.user)
 
@@ -167,11 +175,11 @@ const AdminPage = () => {
       key: 'chihuydieuhanh',
       icon: <AppstoreOutlined />,
       children: [
-        getItem('Báo cáo nhanh số lượng/ biên chế', 'slbc', <LogoutOutlined />),
-        getItem('Báo cáo nhanh số lượng/ cấp bậc', 'slcb', <LockOutlined />),
-        getItem('Báo cáo nhanh số lượng/ CD-KH', 'slcdkh', <AppstoreAddOutlined />),
-        getItem('Báo cáo nhanh số lượng/ độ tuổi', 'sldotuoi', <UserOutlined />),
-        getItem('Báo cáo nhanh số lượng/ ngành', 'slnganh', <UserOutlined />),
+        getItem('Báo cáo biên chế', 'slbc', <LogoutOutlined />),
+        getItem('Báo cáo cấp bậc', 'slcb', <LockOutlined />),
+        getItem('Báo cáo CD-KH', 'slcdkh', <AppstoreAddOutlined />),
+        getItem('Báo cáo độ tuổi', 'sldotuoi', <UserOutlined />),
+        getItem('Báo cáo ngành', 'slnganh', <UserOutlined />),
       ],
     },
     // {
@@ -400,28 +408,31 @@ const AdminPage = () => {
           <DieuChuyenCanBo />
         )
 
+
+      // chỉ huy điều hành
       case 'slbc':
         return (
-          <DrawerComponent />
+          <TKBienChe />
         )
 
 
       case 'slcb':
         return (
-          <AdminProduct />
+
+          <TKCapBac />
         )
       case 'slcdkh':
         return (
-          <OrderAdmin />
+          <TKCDKH />
         )
       case 'sldotuoi':
         return (
-          <AdminUser />
+          <TKDoTuoi />
         )
 
       case 'slnganh':
         return (
-          <AdminProduct />
+          <TKNganh />
         )
       default:
         return <></>

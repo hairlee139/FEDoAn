@@ -10,19 +10,19 @@ export const WrapperContentProfile = styled.div`
     display: flex;
     flex-direction: column;
     // border: 1px solid #ccc;
-    width: 1000px;
+    width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     gap: 20px;
 `
 
 export const WrapperLabel = styled.label`
     color: #000;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 30px;
     font-weight: 600;
-    width: 220px;
+    width: 180px;
     text-align: left;
 `
 
