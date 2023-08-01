@@ -40,14 +40,24 @@ import ChucNang from '../Quyen_ChucNang/ChucNang';
 import NhomNguoiDung from '../Quyen_ChucNang/NhomNguoiDung';
 
 
-
-
-import Free from '../../components/Free/Free'
 import TabNghienCuu from '../QuanLyQuanNhan/CongTacGiangDay/TabNghienCuu';
 import TabDaoTao from '../QuanLyQuanNhan/CongTacGiangDay/TabDaoTao';
 import QTKhenThuong from '../QuanLyQuanNhan/HoSoCanBo/QTKhenThuong';
 import QTKyLuat from '../QuanLyQuanNhan/HoSoCanBo/QTKyLuat';
 import ThongTinCaNhan from '../QuanLyQuanNhan/CongTacGiangDay/ThongTinCaNhan';
+import DMDonVi from '../QuanLyDonVi/DMDonVi';
+import HoSoCanBo from '../QuanLyDonVi/HoSoCanBo';
+import QuanLyNhuCauBC from '../QuanLyDonVi/QuanLyNhuCauBC';
+import DieuChuyenCanBo from '../QuanLyDonVi/DieuChuyenCanBo';
+import DrawerComponent from '../../components/DrawerComponent/DrawerComponent';
+import SLCB from '../ChiHuyDieuHanh/TKBienChe';
+import TKBienChe from '../ChiHuyDieuHanh/TKBienChe';
+import TKCapBac from '../ChiHuyDieuHanh/TKCapBac';
+import TKCDKH from '../ChiHuyDieuHanh/TKCDKH';
+import TKDoTuoi from '../ChiHuyDieuHanh/TKDoTuoi';
+import TKNganh from '../ChiHuyDieuHanh/TKNganh';
+
+
 const AdminPage = () => {
   const user = useSelector((state) => state?.user)
 
@@ -155,7 +165,7 @@ const AdminPage = () => {
       children: [
         getItem('Danh mục đơn vị', 'donvi', <LogoutOutlined />),
         getItem('Hồ sơ cán bộ', 'hscb', <LockOutlined />),
-        getItem('Tìm kiếm hồ sơ cán bộ', 'timkiemhscb', <AppstoreAddOutlined />),
+
         getItem('Quản lý nhu cầu/biên chế', 'quanlynhucaubc', <UserOutlined />),
         getItem('Điểu chuyển cán bộ', 'dieuchuyen', <UserOutlined />),
       ],
@@ -165,21 +175,21 @@ const AdminPage = () => {
       key: 'chihuydieuhanh',
       icon: <AppstoreOutlined />,
       children: [
-        getItem('Báo cáo nhanh số lượng/ biên chế', 'slbc', <LogoutOutlined />),
-        getItem('Báo cáo nhanh số lượng/ cấp bậc', 'slcb', <LockOutlined />),
-        getItem('Báo cáo nhanh số lượng/ CD-KH', 'slcdkh', <AppstoreAddOutlined />),
-        getItem('Báo cáo nhanh số lượng/ độ tuổi', 'sldotuoi', <UserOutlined />),
-        getItem('Báo cáo nhanh số lượng/ ngành', 'slnganh', <UserOutlined />),
+        getItem('Báo cáo biên chế', 'slbc', <LogoutOutlined />),
+        getItem('Báo cáo cấp bậc', 'slcb', <LockOutlined />),
+        getItem('Báo cáo CD-KH', 'slcdkh', <AppstoreAddOutlined />),
+        getItem('Báo cáo độ tuổi', 'sldotuoi', <UserOutlined />),
+        getItem('Báo cáo ngành', 'slnganh', <UserOutlined />),
       ],
     },
-    {
-      label: 'Quản lý nghiệp vụ',
-      key: 'quanlynghiepvu',
-      icon: <AppstoreOutlined />,
-      children: [
-        getItem('Quản lý giảng dạy nghiên cứu', 'giangday', <AppstoreAddOutlined />)
-      ],
-    },
+    // {
+    //   label: 'Quản lý nghiệp vụ',
+    //   key: 'quanlynghiepvu',
+    //   icon: <AppstoreOutlined />,
+    //   children: [
+    //     getItem('Quản lý giảng dạy nghiên cứu', 'giangday', <AppstoreAddOutlined />)
+    //   ],
+    // },
   ];
 
   const [keySelected, setKeySelected] = useState('');
@@ -381,28 +391,48 @@ const AdminPage = () => {
 
       case 'donvi':
         return (
-          <Free />
+          <DMDonVi />
+        )
+
+      case 'hscb':
+        return (
+          <HoSoCanBo />
+        )
+      case 'quanlynhucaubc':
+        return (
+          <QuanLyNhuCauBC />
+        )
+
+      case 'dieuchuyen':
+        return (
+          <DieuChuyenCanBo />
         )
 
 
-
-
-
-
-
-
-
-      case 'products':
+      // chỉ huy điều hành
+      case 'slbc':
         return (
-          <AdminProduct />
+          <TKBienChe />
         )
-      case 'orders':
+
+
+      case 'slcb':
         return (
-          <OrderAdmin />
+
+          <TKCapBac />
         )
-      case 'quannhans':
+      case 'slcdkh':
         return (
-          <AdminUser />
+          <TKCDKH />
+        )
+      case 'sldotuoi':
+        return (
+          <TKDoTuoi />
+        )
+
+      case 'slnganh':
+        return (
+          <TKNganh />
         )
       default:
         return <></>

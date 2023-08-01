@@ -97,10 +97,10 @@ const CapNhatHSCB = () => {
 
     return (
         <div>
-            <div style={{ width: '1270px', margin: '0 auto', height: '500px', padding: '30px' }}>
+            <div style={{ width: '1270px', margin: '0 auto', height: '500px', padding: '10px' }}>
                 <WrapperHeader>Cập nhật thông tin cá nhân</WrapperHeader>
 
-                <div style={{ width: '500px', margin: '0 auto', float: 'left', padding: '10px', background: '#fff', borderRadius: "8px" }}>
+                <div style={{ width: '600px', margin: '0 auto', float: 'left', padding: '5px', background: '#fff', borderRadius: "8px" }}>
 
 
                     <Loading isLoading={isLoading}>
@@ -118,7 +118,7 @@ const CapNhatHSCB = () => {
                                         objectFit: 'cover'
                                     }} alt="avatar" />
                                 )}
-                                {/* <InputForm style={{ width: '300px' }} id="avatar" value={avatar} onChange={handleOnchangeAvatar} /> */}
+                                {/* <InputForm style={{ width: '400px' }}  id="avatar" value={avatar} onChange={handleOnchangeAvatar} /> */}
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -134,7 +134,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="email">Mã cán bộ</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="email" value={email} onChange={handleOnchangeEmail} />
+                                <InputForm style={{ width: '400px' }} id="email" value={email} onChange={handleOnchangeEmail} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -150,7 +150,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="name">Họ và Tên</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="name" value={name} onChange={handleOnchangeName} />
+                                <InputForm style={{ width: '400px' }} id="name" value={name} onChange={handleOnchangeName} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -167,7 +167,7 @@ const CapNhatHSCB = () => {
 
                             <WrapperInput>
                                 <WrapperLabel htmlFor="phone">Ngày sinh</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="email" value={phone} onChange={handleOnchangePhone} />
+                                <InputForm style={{ width: '400px' }} id="email" value={phone} onChange={handleOnchangePhone} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -183,7 +183,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Giới tính</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -199,7 +199,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Số điện thoại</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -224,12 +224,12 @@ const CapNhatHSCB = () => {
 
 
 
-                <div style={{ width: '600px', margin: '0 auto', height: '400px', float: 'right', textAlign: 'left', padding: '10px', background: 'back' }}>
+                <div style={{ width: '600px', margin: '0 auto', height: '400px', float: 'right', textAlign: 'left', padding: '5px', background: 'back' }}>
                     <Loading isLoading={isLoading}>
                         <WrapperContentProfile>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Email</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -246,7 +246,7 @@ const CapNhatHSCB = () => {
 
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Trạng thái</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -262,7 +262,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Học vị</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -278,7 +278,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Đơn vị công tác</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -295,7 +295,7 @@ const CapNhatHSCB = () => {
 
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Chức danh CMKT</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -312,7 +312,7 @@ const CapNhatHSCB = () => {
 
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Học hàm</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}
@@ -328,7 +328,7 @@ const CapNhatHSCB = () => {
                             </WrapperInput>
                             <WrapperInput>
                                 <WrapperLabel htmlFor="address">Đơn vị học thuật</WrapperLabel>
-                                <InputForm style={{ width: '300px' }} id="address" value={address} onChange={handleOnchangeAddress} />
+                                <InputForm style={{ width: '400px' }} id="address" value={address} onChange={handleOnchangeAddress} />
                                 <ButtonComponent
                                     onClick={handleUpdate}
                                     size={40}

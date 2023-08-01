@@ -9,20 +9,31 @@ export const WrapperHeader = styled.h1`
 export const WrapperContentProfile = styled.div`
     display: flex;
     flex-direction: column;
-    // border: 1px solid #ccc;
-    width: 500px;
+    border: 1px solid #ccc;
+    width: 400px;
     margin: 0 auto;
-    padding: 5px;
-    border-radius: 10px;
-    gap: 20px;
+    padding: 10px;
+   // border-radius: 10px;
+    gap: 30px;
+`
+
+export const WrapperTable = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+   // border-radius: 10px;
+    gap: 30px;
 `
 
 export const WrapperLabel = styled.label`
     color: #000;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 30px;
     font-weight: 600;
-    width: 180px;
+    width: 210px;
     text-align: left;
 `
 
