@@ -1,7 +1,7 @@
 import AdminPage from "../pages/AdminPage/AdminPage";
 import DetailsOrderPage from "../pages/DetailsOrderPage/DetailsOrderPage";
+import DoiMatKhau from "../pages/DoiMatKhau/DoiMatKhau";
 import HomePage from "../pages/HomePage/HomePage";
-import MyOrderPage from "../pages/MyOrder/MyOrder";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import OrderPage from "../pages/OrderPage/OrderPage";
 import OrderSucess from "../pages/OrderSuccess/OrderSuccess";
@@ -25,8 +25,8 @@ export const routes = [
         isShowHeader: true
     },
     {
-        path: '/my-order',
-        page: MyOrderPage,
+        path: '/DoiMatKhau',
+        page: DoiMatKhau,
         isShowHeader: true
     },
     {

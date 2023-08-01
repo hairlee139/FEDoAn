@@ -22,6 +22,8 @@ const AdminUser = () => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false)
   const [isLoadingUpdate, setIsLoadingUpdate] = useState(false)
   const [isModalOpenDelete, setIsModalOpenDelete] = useState(false)
+  const [isLoadingAdd, setIsLoadingAdd] = useState(false)
+
   const user = useSelector((state) => state?.user)
   const searchInput = useRef(null);
 
@@ -94,6 +96,22 @@ const AdminUser = () => {
     setIsLoadingUpdate(false)
   }
 
+  const fetchGetAddUser = async (rowSelected) => {
+    const res = await UserService.getDetailsUser(rowSelected)
+    if (res?.data) {
+      setStateUserDetails({
+        name: res?.data?.name,
+        email: res?.data?.email,
+        phone: res?.data?.phone,
+        isAdmin: res?.data?.isAdmin,
+        address: res?.data?.address,
+        avatar: res.data?.avatar
+      })
+    }
+    setIsLoadingAdd(false)
+  }
+
+
   useEffect(() => {
     form.setFieldsValue(stateUserDetails)
   }, [form, stateUserDetails])
@@ -104,6 +122,17 @@ const AdminUser = () => {
       fetchGetDetailsUser(rowSelected)
     }
   }, [rowSelected, isOpenDrawer])
+
+  useEffect(() => {
+    if (rowSelected && isOpenDrawer) {
+      setIsLoadingAdd(true)
+      fetchGetAddUser(rowSelected)
+    }
+  }, [rowSelected, isOpenDrawer])
+
+
+
+
 
   const handleDetailsProduct = () => {
     setIsOpenDrawer(true)
@@ -121,6 +150,7 @@ const AdminUser = () => {
       <div>
         <DeleteOutlined style={{ color: 'red', fontSize: '30px', cursor: 'pointer' }} onClick={() => setIsModalOpenDelete(true)} />
         <EditOutlined style={{ color: 'orange', fontSize: '30px', cursor: 'pointer' }} onClick={handleDetailsProduct} />
+
       </div>
     )
   }
