@@ -36,8 +36,8 @@ import KhuVucUT from '../QuanLyDanhMuc/DanhMucChung/KhuVucUT'
 import CheDoUT from '../QuanLyDanhMuc/DanhMucChung/CheDoUT'
 import CapNhatHSCB from '../QuanLyQuanNhan/HoSoCanBo/CapNhatHSCB';
 import Quyen from '../Quyen_ChucNang/Quyen';
-import ChucNang from '../Quyen_ChucNang/ChucNang';
-import NhomNguoiDung from '../Quyen_ChucNang/NhomNguoiDung';
+import ChucNang from '../Quyen_ChucNang/ChucNangNhom';
+import NhomNguoiDung from '../Quyen_ChucNang/DanhSachNhom';
 
 
 import TabNghienCuu from '../QuanLyQuanNhan/CongTacGiangDay/TabNghienCuu';
@@ -56,6 +56,8 @@ import TKCapBac from '../ChiHuyDieuHanh/TKCapBac';
 import TKCDKH from '../ChiHuyDieuHanh/TKCDKH';
 import TKDoTuoi from '../ChiHuyDieuHanh/TKDoTuoi';
 import TKNganh from '../ChiHuyDieuHanh/TKNganh';
+import PhanQuyenNSD from '../Quyen_ChucNang/PhanQuyenNSD';
+import TabQuyen from '../Quyen_ChucNang/TabQuyen';
 
 
 const AdminPage = () => {
@@ -68,19 +70,24 @@ const AdminPage = () => {
       icon: <AppstoreOutlined />,
       children: [
         {
-          label: 'Quản lý',
+          label: 'Hệ thống',
           key: 'management',
           icon: <SettingOutlined />,
           children: [
             getItem('Đổi mật khẩu', 'changepassword', <LockOutlined />),
             getItem('Tham số hệ thống', 'systemparams', <AppstoreAddOutlined />),
-            getItem('Nhóm quyền', 'quyen', <LockOutlined />),
-            getItem('Nhóm chức năng', 'module', <AppstoreAddOutlined />),
-            getItem('Nhóm người dùng', 'people', <LockOutlined />),
-
           ]
         },
-        getItem('Người dùng', 'users', <UserOutlined />),
+        {
+          label: 'Quản lý NSD và Quyền',
+          key: 'management',
+          icon: <UserOutlined />,
+          children: [
+            getItem('Quản lý phân quyền', 'quyen', <LockOutlined />),
+            getItem('Phân quyền NSD', 'people', <AppstoreAddOutlined />),
+          ]
+        },
+
       ],
     },
 
@@ -252,23 +259,20 @@ const AdminPage = () => {
         return (
           <DoiMatKhau />
         )
-      case 'quyen':
-        return (
-          <Quyen />
-        )
 
-      case 'module':
-        return (
-          <ChucNang />
-        )
       case 'systemparams':
         return (
           <Param />
         )
 
+      //quan ly nsd và quyền
+      case 'quyen':
+        return (
+          <TabQuyen />
+        )
       case 'people':
         return (
-          <NhomNguoiDung />
+          <PhanQuyenNSD />
         )
 
       case 'users':
